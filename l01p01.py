@@ -68,16 +68,17 @@ model.compile(loss='sparse_categorical_crossentropy',
 
 import mlflow
 
-# MLFLOW_TRACKING_URI = 'https://dagshub.com/renansantosmendes/teste.mlflow'
-# MLFLOW_TRACKING_USERNAME = 'renansantosmendes'
-# MLFLOW_TRACKING_PASSWORD = '...'
-# os.environ['MLFLOW_TRACKING_USERNAME'] = MLFLOW_TRACKING_USERNAME
-# os.environ['MLFLOW_TRACKING_PASSWORD'] = MLFLOW_TRACKING_PASSWORD
-# mlflow.set_tracking_uri('')
+def config_mlflow():
+    MLFLOW_TRACKING_URI = 'https://dagshub.com/tauffer/pucmg-mlops.mlflow'
+    MLFLOW_TRACKING_USERNAME = 'tauffer'
+    MLFLOW_TRACKING_PASSWORD = 'fc7fd179348cc42a255e9f42bf333d44b1a0d42c'
+    os.environ['MLFLOW_TRACKING_USERNAME'] = MLFLOW_TRACKING_USERNAME
+    os.environ['MLFLOW_TRACKING_PASSWORD'] = MLFLOW_TRACKING_PASSWORD
+    mlflow.set_tracking_uri('')
 
-mlflow.tensorflow.autolog(log_models=True,
-                          log_input_examples=True,
-                          log_model_signatures=True)
+    mlflow.tensorflow.autolog(log_models=True,
+                              log_input_examples=True,
+                              log_model_signatures=True)
 
 """# 6 - Executando o treino do modelo"""
 
