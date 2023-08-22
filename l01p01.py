@@ -33,7 +33,6 @@ def reset_seeds():
 
 data = pd.read_csv('https://raw.githubusercontent.com/renansantosmendes/lectures-cdas-2023/master/fetal_health_reduced.csv')
 
-
 """# 3 - Preparando o dado antes de iniciar o treino do modelo"""
 
 X=data.drop(["fetal_health"], axis=1)
@@ -43,6 +42,9 @@ columns_names = list(X.columns)
 scaler = preprocessing.StandardScaler()
 X_df = scaler.fit_transform(X)
 X_df = pd.DataFrame(X_df, columns=columns_names)
+
+# reseta as seeds
+reset_seeds()
 
 X_train, X_test, y_train, y_test = train_test_split(X_df, y, test_size=0.3, random_state=42)
 
