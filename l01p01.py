@@ -74,13 +74,14 @@ def config_mlflow():
     MLFLOW_TRACKING_PASSWORD = 'fc7fd179348cc42a255e9f42bf333d44b1a0d42c'
     os.environ['MLFLOW_TRACKING_USERNAME'] = MLFLOW_TRACKING_USERNAME
     os.environ['MLFLOW_TRACKING_PASSWORD'] = MLFLOW_TRACKING_PASSWORD
-    mlflow.set_tracking_uri('')
+    mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
     mlflow.tensorflow.autolog(log_models=True,
                               log_input_examples=True,
                               log_model_signatures=True)
 
 """# 6 - Executando o treino do modelo"""
+config_mlflow()
 
 with mlflow.start_run(run_name='experiment_01') as run:
   model.fit(X_train, y_train, epochs=50, validation_split=0.2, verbose=3)

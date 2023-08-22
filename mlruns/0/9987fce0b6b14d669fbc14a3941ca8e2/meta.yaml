@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/tauffer/PycharmProjects/pucmg-mlops/mlruns/0/9987fce0b6b14d669fbc14a3941ca8e2/artifacts
+end_time: 1692746670548
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9987fce0b6b14d669fbc14a3941ca8e2
+run_name: experiment_01
+run_uuid: 9987fce0b6b14d669fbc14a3941ca8e2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692746664627
+status: 3
+tags: []
+user_id: tauffer
